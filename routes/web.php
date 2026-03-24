@@ -4,9 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('about');
 });
 
+Route::get('/pages', [Controller::class, 'about']);
 Route::get('/books', [BookController::class, 'index']);
 Route::get('/books/create', [BookController::class, 'create']);
 Route::post('/books/store', [BookController::class, 'store']);
